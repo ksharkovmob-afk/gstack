@@ -95,7 +95,7 @@ async function fetchAllOrders(
       per_page:        '100',
       page:            String(page),
       after,
-      status:          'any',
+      status:          'completed',
       orderby:         'date',
       order:           'asc',
     });
