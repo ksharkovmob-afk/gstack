@@ -95,7 +95,7 @@ async function fetchAllOrders(
       per_page:        '100',
       page:            String(page),
       after,
-      status:          'completed',
+      status:          'completed,processing,on-hold',
       orderby:         'date',
       order:           'asc',
     });
@@ -472,6 +472,7 @@ async function main(): Promise<void> {
   console.log('═'.repeat(50));
   console.log(`Store : ${url}`);
   console.log(`Period: ${AFTER_DATE.slice(0, 10)} → 2026-04-28`);
+  console.log(`Orders: completed + processing + on-hold (excludes cancelled/refunded)`);
   console.log(`Target: May 2026 forecast\n`);
   console.log('Fetching orders...');
 
